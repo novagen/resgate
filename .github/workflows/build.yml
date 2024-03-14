@@ -55,6 +55,6 @@ jobs:
           provenance: false
           builder: ${{ steps.buildx.outputs.name }}
           platforms: ${{ env.BUILD_PLATFORMS }}
-          tags: ${{ env.REGISTRY }}/${{ steps.string.outputs.lowercase }}:${{ env.PACKAGE_TAG }},${{ env.REGISTRY }}/${{ steps.string.outputs.lowercase }}:latest
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           outputs: type=image,name=target,annotation-index.org.opencontainers.image.description=${{ github.event.repository.name }}
