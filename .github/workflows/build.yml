@@ -11,7 +11,7 @@ env:
   IMAGE_NAME: ${{ github.repository }}
   BUILD_PLATFORMS: linux/amd64,linux/arm64
   NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  PACKAGE_TAG: "${GITHUB_REF/refs\/tags\//}"
+  PACKAGE_TAG: ${{ github.event.release.tag_name }}
 
 jobs:
   deploy:
