@@ -15,12 +15,10 @@ env:
 
 jobs:
   deploy:
-    if: github.run_number > 1
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 'refs/heads/main'
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Lower case image name
